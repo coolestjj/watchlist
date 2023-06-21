@@ -53,11 +53,21 @@ def forge():
     click.echo('Done.')
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.context_processor
+def inject_user():
+    user = User.query.first()
+    return dict(user=user)  # 需要返回字典，等同于return {'user': user}, 这个字典将会返回到每一个模板中
+
+
 @app.route('/')
 def index():  # put application's code here
-    user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', user=user, movies=movies)
+    return render_template('index.html', movies=movies)
 
 
 if __name__ == '__main__':
