@@ -54,7 +54,9 @@ footer {
 
 /* 头像 */
 .avatar {
-    width: 40px;
+    width: 60px;
+    /*高度变大*/
+    height: 60px;
 }
 
 /* 电影列表 */
@@ -76,13 +78,6 @@ footer {
 
 .movie-list li:hover {
     background-color: #f8f9fa;
-}
-
-/* 龙猫图片 */
-.totoro {
-    display: block;
-    margin: 0 auto;
-    height: 100px;
 }
 
 /* 覆盖某些浏览器对 input 元素定义的字体 */
